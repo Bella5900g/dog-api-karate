@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/breed_images[1.1:14]","start":1753207694851,"end":1753207695376,"title":"features\/breed_images[1.1:14] 15:08:14.851-15:08:15.376 Listar imagens de uma raça válida"},{"id":2,"group":1,"content":"features\/breed_images[1.2:15]","start":1753207695383,"end":1753207695850,"title":"features\/breed_images[1.2:15] 15:08:15.383-15:08:15.850 Listar imagens de uma raça válida"},{"id":3,"group":1,"content":"features\/breed_images[1.3:16]","start":1753207695858,"end":1753207696351,"title":"features\/breed_images[1.3:16] 15:08:15.858-15:08:16.351 Listar imagens de uma raça válida"},{"id":4,"group":1,"content":"features\/breed_images[2:18]","start":1753207696358,"end":1753207696796,"title":"features\/breed_images[2:18] 15:08:16.358-15:08:16.796 Raça inválida retorna 404"},{"id":5,"group":1,"content":"features\/breed_images[3:23]","start":1753207696800,"end":1753207697078,"title":"features\/breed_images[3:23] 15:08:16.800-15:08:17.078 Listar imagens de uma sub-raça válida"},{"id":6,"group":1,"content":"features\/breed_images[4:31]","start":1753207697082,"end":1753207697522,"title":"features\/breed_images[4:31] 15:08:17.082-15:08:17.522 Método POST não permitido"},{"id":7,"group":1,"content":"features\/breed_images[5:36]","start":1753207697527,"end":1753207697999,"title":"features\/breed_images[5:36] 15:08:17.527-15:08:17.999 Método PUT não permitido"},{"id":8,"group":1,"content":"features\/breed_images[6:41]","start":1753207698002,"end":1753207698428,"title":"features\/breed_images[6:41] 15:08:18.002-15:08:18.428 Método DELETE não permitido"},{"id":9,"group":1,"content":"features\/breed_images[7.1:56]","start":1753207698431,"end":1753207698968,"title":"features\/breed_images[7.1:56] 15:08:18.431-15:08:18.968 Listar imagens de várias raças dinamicamente"},{"id":10,"group":1,"content":"features\/breed_images[7.2:57]","start":1753207698973,"end":1753207699449,"title":"features\/breed_images[7.2:57] 15:08:18.973-15:08:19.449 Listar imagens de várias raças dinamicamente"},{"id":11,"group":1,"content":"features\/breed_images[7.3:58]","start":1753207699451,"end":1753207699917,"title":"features\/breed_images[7.3:58] 15:08:19.451-15:08:19.917 Listar imagens de várias raças dinamicamente"},{"id":12,"group":1,"content":"features\/breed_images[7.4:59]","start":1753207699921,"end":1753207700365,"title":"features\/breed_images[7.4:59] 15:08:19.921-15:08:20.365 Listar imagens de várias raças dinamicamente"},{"id":13,"group":1,"content":"features\/breed_images[7.5:60]","start":1753207700369,"end":1753207700849,"title":"features\/breed_images[7.5:60] 15:08:20.369-15:08:20.849 Listar imagens de várias raças dinamicamente"},{"id":14,"group":1,"content":"features\/breed_images[7.6:61]","start":1753207700853,"end":1753207701119,"title":"features\/breed_images[7.6:61] 15:08:20.853-15:08:21.119 Listar imagens de várias raças dinamicamente"},{"id":15,"group":1,"content":"features\/breeds_image_random[1:4]","start":1753207692023,"end":1753207693008,"title":"features\/breeds_image_random[1:4] 15:08:12.023-15:08:13.008 Buscar imagem aleatória com sucesso"},{"id":16,"group":1,"content":"features\/breeds_image_random[2:11]","start":1753207693019,"end":1753207693458,"title":"features\/breeds_image_random[2:11] 15:08:13.019-15:08:13.458 Endpoint inválido retorna 404"},{"id":17,"group":1,"content":"features\/breeds_list_all[1:4]","start":1753207693883,"end":1753207694338,"title":"features\/breeds_list_all[1:4] 15:08:13.883-15:08:14.338 Listar todas as raças com sucesso"},{"id":18,"group":1,"content":"features\/breeds_list_all[2:14]","start":1753207694346,"end":1753207694784,"title":"features\/breeds_list_all[2:14] 15:08:14.346-15:08:14.784 Endpoint inválido retorna 404"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
